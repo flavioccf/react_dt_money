@@ -7,13 +7,11 @@ export function Summary() {
       <SummaryCard
         icon={<ArrowCircleUp size={32} color="#00b37e" />}
         title="Deposits"
-        bgColor="bg-gray-600"
         value="$ 17,400.00"
       />
       <SummaryCard
         icon={<ArrowCircleDown size={32} color="#f75a68" />}
         title="Withdraws"
-        bgColor="bg-gray-600"
         value="$ 17,400.00"
       />
       <SummaryCard
