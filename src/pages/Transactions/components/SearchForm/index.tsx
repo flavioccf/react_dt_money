@@ -4,7 +4,7 @@ export function SearchForm() {
   return (
     <form className="flex gap-4">
       <input
-        className="rounded-md border-0 flex-1 bg-gray-900 text-gray-300 p-4 placeholder:text-gray-500 focus:outline-0 focus:shadow-[0_0_0_2px] focus:shadow-green-500 focus-visible:shadow-green-500"
+        className="rounded-md border-0 flex-1 bg-gray-900 text-gray-300 p-4 placeholder:text-gray-500"
         placeholder="Search by transaction"
       />
       <button
