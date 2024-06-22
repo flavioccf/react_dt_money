@@ -1,5 +1,6 @@
 import * as Dialog from "@radix-ui/react-dialog";
-import { X } from "phosphor-react";
+import * as RadioGroup from "@radix-ui/react-radio-group";
+import { ArrowCircleUp, X } from "phosphor-react";
 
 export function NewTransactionModal() {
   return (
@@ -29,6 +30,29 @@ export function NewTransactionModal() {
               placeholder="Category"
               required
             />
+
+            <RadioGroup.Root className="grid grid-cols-2 gap-4 mt-2">
+              <RadioGroup.Item
+                value="income"
+                className="bg-gray-700 flex align-center justify-center cursor-pointer gap-2 rounded-md text-gray-300 p-4 transition data-[state=unchecked]:hover:bg-gray-600 data-[state=checked]:bg-green-300 data-[state=checked]:text-white group"
+              >
+                <ArrowCircleUp
+                  size={24}
+                  className="text-green-300 group-data-[state=checked]:text-white"
+                />
+                Income
+              </RadioGroup.Item>
+              <RadioGroup.Item
+                value="outcome"
+                className="bg-gray-700 flex align-center justify-center cursor-pointer gap-2 rounded-md text-gray-300 p-4 transition data-[state=unchecked]:hover:bg-gray-600 data-[state=checked]:bg-red-300 data-[state=checked]:text-white group"
+              >
+                <ArrowCircleUp
+                  size={24}
+                  className="text-red-300 group-data-[state=checked]:text-white"
+                />
+                Outcome
+              </RadioGroup.Item>
+            </RadioGroup.Root>
 
             <button
               className="h-[58px] border-0 rounded-md bg-green-500 text-white font-bold py-0 px-5 mt-6 transition cursor-pointer hover:bg-green-700"
