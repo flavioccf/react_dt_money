@@ -1,8 +1,33 @@
+import { zodResolver } from "@hookform/resolvers/zod";
 import * as Dialog from "@radix-ui/react-dialog";
 import * as RadioGroup from "@radix-ui/react-radio-group";
 import { ArrowCircleUp, X } from "phosphor-react";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
+
+const newTransactionFormSchema = z.object({
+  description: z.string(),
+  price: z.number(),
+  category: z.string(),
+  // type: z.enum(["income", "outcome"]),
+});
+
+type NewTransactionFormInputs = z.infer<typeof newTransactionFormSchema>;
 
 export function NewTransactionModal() {
+  const {
+    register,
+    handleSubmit,
+    formState: { isSubmitting },
+  } = useForm<NewTransactionFormInputs>({
+    resolver: zodResolver(newTransactionFormSchema),
+  });
+
+  async function handleCreateNewTransction(data: NewTransactionFormInputs) {
+    await new Promise((resolve) => setTimeout(resolve, 2000));
+    console.log(data);
+  }
+
   return (
     <Dialog.Portal>
       <Dialog.Overlay className="fixed h-dvh w-screen inset-0 bg-black/75">
@@ -11,24 +36,30 @@ export function NewTransactionModal() {
           <Dialog.Close className="absolute top-6 right-6 cursor-pointer text-gray-500 hover:text-gray-300 transition">
             <X size={24} />
           </Dialog.Close>
-          <form action="" className="mt-8 flex flex-col gap-4">
+          <form
+            className="mt-8 flex flex-col gap-4"
+            onSubmit={handleSubmit(handleCreateNewTransction)}
+          >
             <input
               className="rounded-md border-0 bg-gray-900 text-gray-300 p-4 placeholder:text-gray-500"
               type="text"
               placeholder="Description"
               required
+              {...register("description")}
             />
             <input
               className="rounded-md border-0 bg-gray-900 text-gray-300 p-4 placeholder:text-gray-500"
               type="number"
               placeholder="Price"
               required
+              {...register("price", { valueAsNumber: true })}
             />
             <input
               className="rounded-md border-0 bg-gray-900 text-gray-300 p-4 placeholder:text-gray-500"
               type="text"
               placeholder="Category"
               required
+              {...register("category")}
             />
 
             <RadioGroup.Root className="grid grid-cols-2 gap-4 mt-2">
@@ -55,7 +86,9 @@ export function NewTransactionModal() {
             </RadioGroup.Root>
 
             <button
-              className="h-[58px] border-0 rounded-md bg-green-500 text-white font-bold py-0 px-5 mt-6 transition cursor-pointer hover:bg-green-700"
+              className={`h-[58px] border-0 rounded-md bg-green-500 text-white font-bold py-0 px-5 mt-6 transition cursor-pointer hover:bg-green-700 ${
+                isSubmitting && "opacity-50 cursor-not-allowed"
+              }`}
               type="submit"
             >
               Save

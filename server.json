@@ -13,5 +13,19 @@
     "category": "Food",
     "price": 50,
     "createdAt": "2024-06-23T06:22:15.381Z"
+  },{
+    "id": 3,
+    "description": "Salary Payment",
+    "type": "income",
+    "category": "Job",
+    "price": 10000,
+    "createdAt": "2024-06-22T03:30:15.381Z"
+  },{
+    "id": 4,
+    "description": "Lunch",
+    "type": "outcome",
+    "category": "Food",
+    "price": 40,
+    "createdAt": "2024-06-23T06:22:15.381Z"
   }]
 }
