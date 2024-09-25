@@ -33,7 +33,7 @@
       "createdAt": "2024-06-23T06:22:15.381Z"
     },
     {
-      "description": "Test",
+      "description": "AMEX",
       "type": "outcome",
       "category": "Credit Card Payment",
       "price": 800,
@@ -41,7 +41,7 @@
       "id": 5
     },
     {
-      "description": "Testing",
+      "description": "Interac",
       "type": "income",
       "category": "Deposit",
       "price": 100,
