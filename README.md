@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="20%" src="./src/assets/coffee_delivery_logo.svg" />
+  <img width="20%" src="./src/assets/logo.svg" />
 </p>
 
 <p align="center">
