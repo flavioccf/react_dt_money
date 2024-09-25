@@ -4,8 +4,9 @@ import * as RadioGroup from "@radix-ui/react-radio-group";
 import { ArrowCircleUp, X } from "phosphor-react";
 import { Controller, useForm } from "react-hook-form";
 import { z } from "zod";
-import { useContext } from "react";
 import { TransactionsContext } from "../../contexts/TransactionsContext";
+import { useContextSelector } from "use-context-selector";
+import { memo } from "react";
 
 const newTransactionFormSchema = z.object({
   description: z.string(),
@@ -16,8 +17,13 @@ const newTransactionFormSchema = z.object({
 
 type NewTransactionFormInputs = z.infer<typeof newTransactionFormSchema>;
 
-export function NewTransactionModal() {
-  const { createTransaction } = useContext(TransactionsContext);
+function NewTransactionModalComponent() {
+  const createTransaction = useContextSelector(
+    TransactionsContext,
+    (context) => {
+      return context.createTransaction;
+    }
+  );
 
   const {
     control,
@@ -109,8 +115,7 @@ export function NewTransactionModal() {
                   </RadioGroup.Root>
                 );
               }}
-            ></Controller>
-
+            />
             <button
               className={`h-[58px] border-0 rounded-md bg-green-500 text-white font-bold py-0 px-5 mt-6 transition cursor-pointer hover:bg-green-700 ${
                 isSubmitting && "opacity-50 cursor-not-allowed"
@@ -125,3 +130,5 @@ export function NewTransactionModal() {
     </Dialog.Portal>
   );
 }
+
+export const NewTransactionModal = memo(NewTransactionModalComponent);

@@ -1,16 +1,19 @@
-import { useContext } from "react";
 import { Header } from "../../components/Header";
 import { Summary } from "../../components/Summary";
 import { SearchForm } from "./components/SearchForm";
 import { TransactionsContext } from "../../contexts/TransactionsContext";
 import { dateFormatter, priceFormatter } from "../../utils/formatter";
+import { useContextSelector } from "use-context-selector";
 
 export function Transactions() {
-  const { transactions } = useContext(TransactionsContext);
+  const transactions = useContextSelector(
+    TransactionsContext,
+    (context) => context.transactions
+  );
   return (
     <div>
       <Header />
-      <Summary></Summary>
+      <Summary />
       <main className="w-full max-w-screen-lg px-6 mt-16 mb-0 mx-auto">
         <SearchForm />
         <table className="w-full border-separate border-spacing-x-0 border-spacing-y-2 mt-6">

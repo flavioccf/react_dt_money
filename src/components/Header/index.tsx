@@ -15,7 +15,7 @@ export function Header() {
             className="h-[50px] bg-green-500 font-bold py-0 px-5 rounded-md hover:bg-green-700 transition"
             asChild
           >
-            <button>New Transaction</button>
+            <button type="button">New Transaction</button>
           </Dialog.Trigger>
           <NewTransactionModal />
         </Dialog.Root>
