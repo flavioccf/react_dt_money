@@ -1,31 +1,52 @@
 {
-  "transactions": [{
-    "id": 1,
-    "description": "Website Development",
-    "type": "income",
-    "category": "Freelance",
-    "price": 12000,
-    "createdAt": "2024-06-22T03:30:15.381Z"
-  },{
-    "id": 2,
-    "description": "Dinner",
-    "type": "outcome",
-    "category": "Food",
-    "price": 50,
-    "createdAt": "2024-06-23T06:22:15.381Z"
-  },{
-    "id": 3,
-    "description": "Salary Payment",
-    "type": "income",
-    "category": "Job",
-    "price": 10000,
-    "createdAt": "2024-06-22T03:30:15.381Z"
-  },{
-    "id": 4,
-    "description": "Lunch",
-    "type": "outcome",
-    "category": "Food",
-    "price": 40,
-    "createdAt": "2024-06-23T06:22:15.381Z"
-  }]
+  "transactions": [
+    {
+      "id": 1,
+      "description": "Website Development",
+      "type": "income",
+      "category": "Freelance",
+      "price": 12000,
+      "createdAt": "2024-06-22T03:30:15.381Z"
+    },
+    {
+      "id": 2,
+      "description": "Dinner",
+      "type": "outcome",
+      "category": "Food",
+      "price": 50,
+      "createdAt": "2024-06-23T06:22:15.381Z"
+    },
+    {
+      "id": 3,
+      "description": "Salary Payment",
+      "type": "income",
+      "category": "Job",
+      "price": 10000,
+      "createdAt": "2024-06-22T03:30:15.381Z"
+    },
+    {
+      "id": 4,
+      "description": "Lunch",
+      "type": "outcome",
+      "category": "Food",
+      "price": 40,
+      "createdAt": "2024-06-23T06:22:15.381Z"
+    },
+    {
+      "description": "Test",
+      "type": "outcome",
+      "category": "Credit Card Payment",
+      "price": 800,
+      "createdAt": "2024-09-20T05:16:08.241Z",
+      "id": 5
+    },
+    {
+      "description": "Testing",
+      "type": "income",
+      "category": "Deposit",
+      "price": 100,
+      "createdAt": "2024-09-20T05:29:09.450Z",
+      "id": 6
+    }
+  ]
 }
